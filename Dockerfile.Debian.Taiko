@@ -1,6 +1,6 @@
 # This is a docker file to execute a Taiko script on a Debian host
 
-# Create base image from node
+# Create base image from nodejs on Docker hub
 FROM node:12.18.0-stretch-slim
 
 # Maintainer
@@ -40,4 +40,4 @@ WORKDIR /home/test/Downloads/Taiko-Scripts
 USER test
 
 # Run the following commands on execution
-CMD taiko Taiko-GoogleSearch-Headless.js
+CMD taiko Taiko-BT-Headless.js
