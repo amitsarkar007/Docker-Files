@@ -38,4 +38,4 @@ WORKDIR /home/test/Downloads/Taiko-Scripts
 USER test
 
 # Run the following commands on execution
-CMD taiko Taiko-BT-Headless.js
+CMD taiko Taiko-GoogleSearch-Headless.js
