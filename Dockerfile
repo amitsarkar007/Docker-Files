@@ -1,3 +1,5 @@
+# This is a docker file to execute a Taiko script on a Debian host
+
 # Create base image from node
 FROM node:12.18.0-stretch-slim
 
@@ -15,9 +17,6 @@ RUN apt-get update && \
     libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 \
     ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget git \
     unzip fontconfig locales --no-install-recommends
-
-# Set environment variable for Taiko to use Chromium
-# ENV TAIKO_BROWSER_PATH /usr/bin/chromium-browser
 
     # Install taiko while building the image
 RUN npm install -g taiko --unsafe-perm=true && \
