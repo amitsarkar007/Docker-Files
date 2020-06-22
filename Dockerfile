@@ -1,4 +1,4 @@
-# Create base image from debian
+# Create base image from node
 FROM node:12.18.0-stretch-slim
 
 # Maintainer
@@ -17,7 +17,7 @@ RUN apt-get update && \
     unzip fontconfig locales --no-install-recommends
 
 # Set environment variable for Taiko to use Chromium
-ENV TAIKO_BROWSER_PATH /usr/bin/chromium-browser
+# ENV TAIKO_BROWSER_PATH /usr/bin/chromium-browser
 
     # Install taiko while building the image
 RUN npm install -g taiko --unsafe-perm=true && \
@@ -41,4 +41,4 @@ WORKDIR /home/test/Downloads/Taiko-Scripts
 USER test
 
 # Run the following commands on execution
-# CMD [ "/bin/bash", "taiko Taiko-GoogleSearch-Headless.js" ]
+CMD taiko Taiko-GoogleSearch-Headless.js
