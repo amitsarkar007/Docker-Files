@@ -17,28 +17,28 @@ Using **[Docker](https://www.docker.com/)** to run **[Taiko](https://github.com/
 * Download **[Docker Desktop for macOS](https://hub.docker.com/editions/community/docker-ce-desktop-mac/)**
 
 ## Docker Hub
-* Signup at **[Docker Hub](https://hub.docker.com/signup/)**
+* Sign-up at **[Docker Hub](https://hub.docker.com/signup/)**
 * Login using 
     ```
-    sudo docker login --username=yourhubusername --email=youremail@company.com
+    docker login --username=yourhubusername --email=youremail@company.com
     ```
 
 ## Build Docker image without previous cache
 ```
-sudo docker build -t <name of image> -f <name of Dockerfile> . --no-cache
+docker build -t <name of image> -f <name of Dockerfile> . --no-cache
 ```
 
 ## Check Docker images
 ```
-sudo docker images
+docker images
 ```
 
 ## Run Docker image
 ```
-sudo docker run <name of image>
+docker run <name of image>
 ```
 
 ## Check Docker containers
 ```
-sudo docker container ls -a
+docker container ls -a
 ```
