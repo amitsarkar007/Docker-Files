@@ -1,8 +1,8 @@
 # Create base image from nodejs on Docker hub
-FROM node:12.18.0-stretch-slim
+FROM node:12.18.0-stretch-slim AS builder
 
 # Maintainer
-MAINTAINER "Amit Sarkar"
+LABEL maintainer="Amit Sarkar"
 
 # User as root
 USER root
@@ -15,6 +15,9 @@ RUN apt-get update && apt-get install -yq \
     libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 \
     ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget git \
     unzip fontconfig locales --no-install-recommends
+
+# Create new image from the previous base image
+FROM builder
 
     # Install taiko while building the image
 RUN npm install -g taiko --unsafe-perm=true && \
