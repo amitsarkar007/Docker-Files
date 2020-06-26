@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -yq \
 FROM builder
 
     # Install taiko while building the image
-RUN npm install -g taiko --unsafe-perm=true && \
+RUN npm install -g taiko@1.0.12 --unsafe-perm=true && \
     # Add a non-privileged user in a new group
     groupadd -r test && useradd -r -m -g test test && \
     # Make a new directory Downloads for the user
@@ -34,11 +34,11 @@ RUN npm install -g taiko --unsafe-perm=true && \
     # Change the user and group ownership of the cloned git folder
     chown -R test:test /home/test/Downloads/Taiko-Scripts
 
-# Set the working directory
-WORKDIR /home/test/Downloads/Taiko-Scripts
-
 # User as test
 USER test
+
+# Set the working directory
+WORKDIR /home/test/Downloads/Taiko-Scripts
 
 # Run the following commands on execution
 CMD taiko Taiko-GoogleSearch-Headless.js
